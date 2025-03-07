@@ -1,0 +1,2165 @@
+{
+	"info": {
+		"_postman_id": "bb0e4e07-cf31-474e-9fdd-6596c864cb5b",
+		"name": "Laravel",
+		"description": "Laravel REST apis with passport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33549726"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Tayyab\",\r\n    \"last_name\": \"Hussain\",\r\n    \"email\": \"tayyab.hussain.eng@gmail.com\",\r\n    \"password\": \"P@$$w0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{laravel-host}}/api/register",
+						"description": "This endpoint is used to register a new user. The HTTP POST request should be sent to {{laravel-host}}/api/register with the following payload in the raw request body type:\n\n``` json\n{\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"email\": \"string\",\n    \"password\": \"string\"\n}\n\n ```\n\nUpon successful registration, the response will be in the form of a JSON schema. The specific structure of the response will depend on the implementation of the API and the framework being used."
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Tayyab\",\r\n    \"last_name\": \"Hussain\",\r\n    \"email\": \"tayyab.hussain.it@gmail.com\",\r\n    \"password\": \"P@$$w0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{laravel-host}}/api/register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:37:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTEyMjEyY2M3MTQ2NWE2NDFmZTJlY2JiODRmN2M4OGU5YjgxYTg4ODIxMzBkODZhZDA5YTgxMTM4MGYyZWRjNTU2NWIwZTJjOTRhMWMzNTAiLCJpYXQiOjE3NDEzNzYyNzAuNTUyMDUsIm5iZiI6MTc0MTM3NjI3MC41NTIwNTQsImV4cCI6MTc3MjkxMjI3MC41NDUyNSwic3ViIjoiMiIsInNjb3BlcyI6W119.BVlv0nE0JRzrS8maDEPvXh1KT8IcSUiTCJK1Xs8ScIur9s8F5iPOcA-NFML0lGOGrgJz7oQ9vJVXuiRWsil3WbOVsvRhddU4LPUZKIpc9OVEg5QUp6qtQBiIZlCGzRPeC_ca2XcHyeJ63dVOezS7JtPG8xdg3mTSkq9lEzaw05vPAVd5Tyhkq8CibELAeLuAKHAVhDtVJJjRWb8bU0z7e2aAZ7jaMNZAPRiVlIhyGUdgto8YDOcUbUEB8BbPFiD_OGqHnp0TYsNy8mYppBwhE1aFaV4xbsfx5hKlqlsFEBWhBbF8DN1XbHl69Axs9KrP95p02yavOOg9J8-I9I_A-HkKVbvugOCBJTBGrL2aKDpRU4LzIAT_WYS5FQ812A-JQz-NdOhn9xv_EJpxIGzhQpaHyCS_LNXdK727EqlNUsCNBIWXHnUGT7gkD0ZlhquCjhr1ovPyou56NsJ6bqMbBkrGB726yEJhzPipeNorXw99gopW4C-GOA1LGq3GvfAdmB2Q8dXMBKnumcO5EUaxralBqBVmoxFmEDe8-uEliIA0L8z9Kgev70IOOf6yKKqv_dQ4Q_93Vmh0v_1F8IsiRVVgZqtETSXRwreS1R8J5FlwkP9XUUN0CNTHI4PbgCFPWsQXMqIen17m4ISXyNorE6jqtzIn4KYc-5fb5dCr3Go\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tayyab.hussain.eng@gmail.com\",\r\n    \"password\": \"P@$$w0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{laravel-host}}/api/login",
+						"description": "### Login API\n\nThis API endpoint is used to authenticate a user and generate a session token for further interactions with the system.\n\n#### Request Body Parameters\n\n- `email` (string): The email address of the user.\n    \n- `password` (string): The password for the user account.\n    \n\n#### Response\n\nThe response for this request is a JSON object with the following properties:\n\n- `token` (string): The session token generated upon successful authentication.\n    \n\n``` json\n{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjEiLCJlbWFpbCI6InRheXlhYi5odXNzYWluLmVuZ0BnbWFpbC5jb20iLCJpYXQiOjE2MzI5NzEzNzgsImV4cCI6MTYzMjk3NDk3OH0.GtJt3p4NfzUJ1wv1uZ3Eg9S2Q2vHhF9Jt7j4X4d4c8hE3d4j7f\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"tayyab.hussain.eng@gmail.com\",\r\n    \"password\": \"P@$$w0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{laravel-host}}/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:38:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDIyYzhlNWYyNTNjMDM5MjE4NjM0YmRhZmM5NWE3ZjFmYTliMzc3NGQ2YmU2MmE2YjJlMTk5MmU2MTc0ZDhlNzcyNmFiNGFlNDNlYWE3OTkiLCJpYXQiOjE3NDEzNzYyODYuNzgwOTEyLCJuYmYiOjE3NDEzNzYyODYuNzgwOTE1LCJleHAiOjE3NzI5MTIyODYuNzc1NzYzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ZM80MhYU6gLlaXYdYFGS1SfjUMKB3Z29FjZLFcKXGo9-NY8Ux2ySMW98Cu7o4BCAtuJpDOaoQR-MIwueRHOmffgtbimkDV7b1OoMw0ActGzfQA7IOlvmKUy2k2fBoMUGBYvAlhbsTYyqcb58Kvq8qVGmtgZ3vKUMHr8gINd-nuWdLwuXTngE2nZPmwo1SoLXe_jvRF7gE7Osucah2Ynpj4ViDw8ENgIc8U22d4WC5OkNl-CqqlnlOB6dUCmGqCr3vyP7vVXSowLhczFJMtNlJfMdfsWa7nsSsl61hr6Mde7Igr1bTo9whbQ8G0Netd48eNMS_PdYjb8hPW0BMAX6AsOBfLmQCqdZZ7jq37-UrOi615SvX45blilpCW7_BtVbzYTDbpPCHikodik3Nf4p-0O2cbdIkU44Iu8KEwpRy10jyMLwAZJURi-UwdisjkfmoG7F5Gbvpa6th3py8DTsURVV0KEO32AZBWirbnSG02uUbF1aj4xj51r3Neer5JjhgLLq2PNJxiya8aUFRQL9mQwdz1rtkEmo0ToRvpKJAYHjnrbUKQDR76-g5zHh2blKhu9KF7ls0FT9Kdxfcn6rYU19G-hpIY-0mF6F6nQc4aCsuluFMLDfWu6935M5v01dSVglGXt6XKb17lOW61F8HsYP_xpRsosL_fZGO_ss9-g\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{laravel-host}}/api/logout",
+						"description": "### Logout\n\nThis endpoint is used to log the user out by invalidating the user's authentication token.\n\n**Request Body**  \nThis endpoint does not require a request body.\n\n**Response**\n\n- `status`: Indicates the status of the request. A successful logout will return a status of 200.\n    \n- `message`: Provides a message confirming the successful logout."
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{laravel-host}}/api/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:38:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Authentication apis"
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/projects?filters[department]=IT",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filters[department]",
+									"value": "IT"
+								}
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve projects filtered:\n\nBy Project Fields\n\n- name\n    \n- status\n    \n\nBy Attributes\n\n- start_date\n    \n- end_date\n    \n- department\n    \n\n### Request Body\n\nThis request does not require a request body.\n\n### Response Body\n\nThe response will include the details of the projects"
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{laravel-host}}/api/projects?filters[department]=IT",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filters[department]",
+											"value": "IT"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:38:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Laravel Project\",\n        \"status\": \"active\",\n        \"created_by\": 1,\n        \"updated_by\": null,\n        \"created_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"updated_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"deleted_at\": null,\n        \"attributes\": [\n            {\n                \"id\": 1,\n                \"attribute_id\": 1,\n                \"entity_id\": 1,\n                \"value\": \"2025-03-07\",\n                \"created_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"updated_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"deleted_at\": null,\n                \"attribute\": {\n                    \"id\": 1,\n                    \"name\": \"start_date\",\n                    \"type\": \"date\",\n                    \"created_at\": \"2025-03-07T19:09:13.000000Z\",\n                    \"updated_at\": \"2025-03-07T19:09:13.000000Z\",\n                    \"deleted_at\": null\n                }\n            },\n            {\n                \"id\": 2,\n                \"attribute_id\": 2,\n                \"entity_id\": 1,\n                \"value\": \"2025-05-07\",\n                \"created_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"updated_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"deleted_at\": null,\n                \"attribute\": {\n                    \"id\": 2,\n                    \"name\": \"end_date\",\n                    \"type\": \"date\",\n                    \"created_at\": \"2025-03-07T19:09:20.000000Z\",\n                    \"updated_at\": \"2025-03-07T19:09:20.000000Z\",\n                    \"deleted_at\": null\n                }\n            },\n            {\n                \"id\": 3,\n                \"attribute_id\": 3,\n                \"entity_id\": 1,\n                \"value\": \"IT\",\n                \"created_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"updated_at\": \"2025-03-07T19:09:47.000000Z\",\n                \"deleted_at\": null,\n                \"attribute\": {\n                    \"id\": 3,\n                    \"name\": \"department\",\n                    \"type\": \"text\",\n                    \"created_at\": \"2025-03-07T19:09:43.000000Z\",\n                    \"updated_at\": \"2025-03-07T19:09:43.000000Z\",\n                    \"deleted_at\": null\n                }\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/projects/2",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve information about a specific project with the ID of 2.\n\n### Request Body\n\nThis request does not require a request body.\n\n### Response Body\n\nThe response will be in JSON format"
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Node Project\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/projects",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "# Create a New Project\n\nThis endpoint allows you to create a new project.\n\n## Request Body\n\n- `name` (string, required): The name of the project.\n    \n- `status` (string, required): The status of the project (e.g., active, inactive).\n    \n\nExample:\n\n``` json\n{\n  \"name\": \"Node Project\",\n  \"status\": \"active\"\n}\n\n ```\n\n## Response\n\nUpon successful creation of the project, the response will include the details of the newly created project."
+					},
+					"response": [
+						{
+							"name": "store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PHP Project\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{laravel-host}}/api/projects",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:39:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"PHP Project\",\n    \"status\": \"active\",\n    \"created_by\": 1,\n    \"updated_at\": \"2025-03-07T19:39:10.000000Z\",\n    \"created_at\": \"2025-03-07T19:39:10.000000Z\",\n    \"id\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "set attributes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"start_date\",\r\n            \"value\": \"2025-05-10\"\r\n        },\r\n        {\r\n            \"name\": \"end_date\",\r\n            \"value\": \"2025-08-10\"\r\n        },\r\n        {\r\n            \"name\": \"department\",\r\n            \"value\": \"SE\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/projects/2/attributes",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint allows you to add attributes to a specific project. The HTTP POST request should be sent to {{laravel-host}}/api/projects/2/attributes, with the request body containing an array of attributes, each consisting of a name and value pair. For example:\n\n``` json\n{\n  \"attributes\": [\n    {\n      \"name\": \"start_date\",\n      \"value\": \"2025-05-10\"\n    }\n  ]\n}\n\n ```\n\nUpon successful execution, the response will include the details of the added attributes."
+					},
+					"response": [
+						{
+							"name": "set attributes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"start_date\",\r\n            \"value\": \"2025-05-10\"\r\n        },\r\n        {\r\n            \"name\": \"end_date\",\r\n            \"value\": \"2025-08-10\"\r\n        },\r\n        {\r\n            \"name\": \"department\",\r\n            \"value\": \"Core\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{laravel-host}}/api/projects/3/attributes",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										"3",
+										"attributes"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:39:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Attributes updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Core PHP Project\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/projects/3",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"3"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API endpoint sends an HTTP PUT request to update the project. The request should include a JSON payload in the raw request body type with the keys \"name\" and \"status\" to update the project name and status respectively.\n\n### Request Body\n\n- `name`: (string) The updated name of the project.\n    \n- `status`: (string) The updated status of the project.\n    \n\n### Response\n\nThe response will contain the updated details of the project."
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Core PHP Project\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{laravel-host}}/api/projects/3",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										"3"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:40:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"Core PHP Project\",\n    \"status\": \"active\",\n    \"created_by\": 1,\n    \"updated_by\": 1,\n    \"created_at\": \"2025-03-07T19:39:10.000000Z\",\n    \"updated_at\": \"2025-03-07T19:40:14.000000Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{laravel-host}}/api/projects/111",
+						"description": "### Delete Project\n\nThis endpoint is used to delete a specific project.\n\n#### Request\n\n- Method: DELETE\n    \n- URL: `{{laravel-host}}/api/projects/1`\n    \n\n#### Response\n\nThe response for this request is a JSON schema representing the structure of the response body."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "attributes",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/attributes",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "### Get Attributes\n\nThis API endpoint makes an HTTP GET request to retrieve attributes based on filter.\n\npossible filters\n\n- name\n    \n- type\n    \n\n#### Request\n\n- Method: GET\n    \n- URL: `{{laravel-host}}/api/attributes`\n    \n- Query Parameters:\n    \n    - filters\\[type\\]: date\n        \n\n#### Response\n\nThe response for this request is a array of JSON objects\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"name\": \"start_date\",\n        \"type\": \"date\",\n        \"created_at\": \"2025-03-07T19:09:13.000000Z\",\n        \"updated_at\": \"2025-03-07T19:09:13.000000Z\",\n        \"deleted_at\": null\n    }\n]\n\n ```"
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "130.61.83.110/api/attributes",
+									"host": [
+										"130",
+										"61",
+										"83",
+										"110"
+									],
+									"path": [
+										"api",
+										"attributes"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:40:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"start_date\",\n        \"type\": \"date\",\n        \"created_at\": \"2025-03-07T19:09:13.000000Z\",\n        \"updated_at\": \"2025-03-07T19:09:13.000000Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"end_date\",\n        \"type\": \"date\",\n        \"created_at\": \"2025-03-07T19:09:20.000000Z\",\n        \"updated_at\": \"2025-03-07T19:09:20.000000Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"department\",\n        \"type\": \"text\",\n        \"created_at\": \"2025-03-07T19:09:43.000000Z\",\n        \"updated_at\": \"2025-03-07T19:09:43.000000Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"department\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/attributes",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "### POST /api/attributes\n\nThis endpoint is used to create a new attribute.\n\n#### Request Body\n\n- `name` (string, required): The name of the attribute.\n    \n- `type` (string, required): The type of the attribute.\n    \n\n#### Response\n\nThe response will be in JSON format and will follow the schema below:\n\n``` json\n{\n  \"type\": \"string\",\n  \"name\": \"string\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"team_size\",\r\n    \"type\": \"number\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "130.61.83.110/api/attributes",
+									"host": [
+										"130",
+										"61",
+										"83",
+										"110"
+									],
+									"path": [
+										"api",
+										"attributes"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:40:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"team_size\",\n    \"type\": \"number\",\n    \"updated_at\": \"2025-03-07T19:40:54.000000Z\",\n    \"created_at\": \"2025-03-07T19:40:54.000000Z\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/attributes/2",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"attributes",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve the details of a specific attribute with the ID.\n\n### Request Body\n\nThis request does not require a request body.\n\n### Response\n\nUpon a successful request, the server returns a JSON object with the following attributes:\n\n- `id` (number): The ID of the attribute.\n    \n- `name` (string): The name of the attribute.\n    \n- `type` (string): The type of the attribute.\n    \n- `created_at` (string): The timestamp of when the attribute was created.\n    \n- `updated_at` (string): The timestamp of when the attribute was last updated.\n    \n- `deleted_at` (string): The timestamp of when the attribute was deleted, or null if it has not been deleted."
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "130.61.83.110/api/attributes/2",
+									"host": [
+										"130",
+										"61",
+										"83",
+										"110"
+									],
+									"path": [
+										"api",
+										"attributes",
+										"2"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:41:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"end_date\",\n    \"type\": \"date\",\n    \"created_at\": \"2025-03-07T19:09:20.000000Z\",\n    \"updated_at\": \"2025-03-07T19:09:20.000000Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"department\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/attributes/3",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"attributes",
+								"3"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "# Update Attribute\n\nThis endpoint is used to update an attribute with a specific ID.\n\n## Request\n\n- Method: PUT\n    \n- URL: `{{laravel-host}}/api/attributes/3`\n    \n- Body:\n    \n    - name (text, required): The name of the attribute\n        \n    - type (text, required): The type of the attribute\n        \n\n## Response\n\nThe response for this request is a JSON object conforming to the following schema:\n\n``` json\n{\n    \"name\": \"string\",\n    \"type\": \"string\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"department\",\r\n    \"type\": \"text\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "130.61.83.110/api/attributes/3",
+									"host": [
+										"130",
+										"61",
+										"83",
+										"110"
+									],
+									"path": [
+										"api",
+										"attributes",
+										"3"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:41:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"department\",\n    \"type\": \"text\",\n    \"created_at\": \"2025-03-07T19:09:43.000000Z\",\n    \"updated_at\": \"2025-03-07T19:09:43.000000Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{laravel-host}}/api/timesheets/1",
+						"description": "### Delete Timesheet\n\nThis endpoint is used to delete a specific timesheet entry.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\nThe response will not include a body, but will return a status code to indicate the success or failure of the deletion operation."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timesheets",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/timesheets",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"timesheets"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "The endpoint retrieves a list of timesheets via an HTTP GET request to {{laravel-host}}/api/timesheets.\n\n### Response\n\nThe response is a JSON array with the following schema:\n\n- `id` (number): The unique identifier for the timesheet.\n    \n- `task_name` (string): The name of the task associated with the timesheet.\n    \n- `date` (string): The date of the timesheet entry.\n    \n- `hours` (number): The number of hours logged in the timesheet.\n    \n- `user_id` (number): The identifier of the user associated with the timesheet.\n    \n- `project_id` (number): The identifier of the project associated with the timesheet.\n    \n- `created_at` (string): The timestamp of when the timesheet was created.\n    \n- `updated_at` (string): The timestamp of when the timesheet was last updated.\n    \n- `deleted_at` (null or string): The timestamp of when the timesheet was deleted, if applicable.\n    \n\nThe response has a status code of 200 and a Content-Type of application/json."
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{laravel-host}}/api/timesheets",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"timesheets"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:41:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"task_name\": \"Creating migrations\",\n        \"date\": \"2025-03-07\",\n        \"hours\": 2,\n        \"user_id\": 1,\n        \"project_id\": 1,\n        \"created_at\": \"2025-03-07T19:14:22.000000Z\",\n        \"updated_at\": \"2025-03-07T19:14:22.000000Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 2,\n        \"task_name\": \"Chat Feature\",\n        \"date\": \"2025-03-08\",\n        \"hours\": 4,\n        \"user_id\": 1,\n        \"project_id\": 1,\n        \"created_at\": \"2025-03-07T19:30:38.000000Z\",\n        \"updated_at\": \"2025-03-07T19:30:38.000000Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task_name\": \"Code setup\",\r\n    \"hours\": 4,\r\n    \"project_id\": 3,\r\n    \"date\": \"2025-03-08\",\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/timesheets",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"timesheets"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "### POST /api/timesheets\n\nThis endpoint is used to create a new timesheet entry.\n\n#### Request\n\nThe request should be sent as an HTTP POST to the specified URL. The request body should be in raw JSON format and include the following parameters:\n\n- `task_name`: (string) The name of the task.\n    \n- `hours`: (number) The number of hours spent on the task.\n    \n- `project_id`: (number) The ID of the project related to the task.\n    \n- `date`: (string) The date of the timesheet entry in the format \"YYYY-MM-DD\".\n    \n- `user_id`: (number) The ID of the user submitting the timesheet.\n    \n\nExample:\n\n``` json\n{\n    \"task_name\": \"Chat Feature\",\n    \"hours\": 4,\n    \"project_id\": 1,\n    \"date\": \"2025-03-08\",\n    \"user_id\": 1\n}\n#### Response\nUpon successful creation of the timesheet entry, the API will respond with a status code of 201 and a JSON object containing the details of the created timesheet entry. The response will have the following schema:\n```json\n{\n    \"task_name\": \"Chat Feature\",\n    \"date\": \"2025-03-08\",\n    \"hours\": 4,\n    \"user_id\": 1,\n    \"project_id\": 1,\n    \"updated_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"created_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"id\": 2\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"task_name\": \"Code setup\",\r\n    \"hours\": 4,\r\n    \"project_id\": 3,\r\n    \"date\": \"2025-03-08\",\r\n    \"user_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{laravel-host}}/api/timesheets",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"timesheets"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:42:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"task_name\": \"Code setup\",\n    \"date\": \"2025-03-08\",\n    \"hours\": 4,\n    \"user_id\": 1,\n    \"project_id\": 3,\n    \"updated_at\": \"2025-03-07T19:42:01.000000Z\",\n    \"created_at\": \"2025-03-07T19:42:01.000000Z\",\n    \"id\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{laravel-host}}/api/timesheets/2",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"timesheets",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "The endpoint retrieves a timesheet with the specified ID. The response returns a JSON object representing the timesheet, including details such as the task name, date, hours, user ID, project ID, and timestamps for creation and update. Additionally, it includes nested objects for the associated user and project, providing their respective details.\n\n``` json\n{\n    \"id\": 2,\n    \"task_name\": \"Chat Feature\",\n    \"date\": \"2025-03-08\",\n    \"hours\": 4,\n    \"user_id\": 1,\n    \"project_id\": 1,\n    \"created_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"updated_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"deleted_at\": null,\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"Tayyab\",\n        \"last_name\": \"Hussain\",\n        \"email\": \"tayyab.hussain.eng@gmail.com\",\n        \"created_at\": \"2025-03-07T18:55:42.000000Z\",\n        \"updated_at\": \"2025-03-07T18:55:42.000000Z\",\n        \"deleted_at\": null\n    },\n    \"project\": {\n        \"id\": 1,\n        \"name\": \"Laravel Project\",\n        \"status\": \"active\",\n        \"created_by\": 1,\n        \"updated_by\": null,\n        \"created_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"updated_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"deleted_at\": null\n    }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{laravel-host}}/api/timesheets/2",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"timesheets",
+										"2"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:42:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"task_name\": \"Chat Feature\",\n    \"date\": \"2025-03-08\",\n    \"hours\": 4,\n    \"user_id\": 1,\n    \"project_id\": 1,\n    \"created_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"updated_at\": \"2025-03-07T19:30:38.000000Z\",\n    \"deleted_at\": null,\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"Tayyab\",\n        \"last_name\": \"Hussain\",\n        \"email\": \"tayyab.hussain.eng@gmail.com\",\n        \"created_at\": \"2025-03-07T18:55:42.000000Z\",\n        \"updated_at\": \"2025-03-07T18:55:42.000000Z\",\n        \"deleted_at\": null\n    },\n    \"project\": {\n        \"id\": 1,\n        \"name\": \"Laravel Project\",\n        \"status\": \"active\",\n        \"created_by\": 1,\n        \"updated_by\": null,\n        \"created_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"updated_at\": \"2025-03-07T19:07:31.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task_name\": \"Code cleanup\",\r\n    \"hours\": 6,\r\n    \"project_id\": 1,\r\n    \"date\": \"2025-03-07\",\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{laravel-host}}/api/timesheets/1",
+							"host": [
+								"{{laravel-host}}"
+							],
+							"path": [
+								"api",
+								"timesheets",
+								"1"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint makes an HTTP PUT request to update a specific timesheet with the given ID. The request should include a JSON payload in the raw request body with the following parameters:\n\n- task_name (string): The name of the task.\n    \n- hours (number): The number of hours spent on the task.\n    \n- project_id (number): The ID of the project associated with the timesheet.\n    \n- date (string): The date of the timesheet entry.\n    \n- user_id (number): The ID of the user submitting the timesheet.\n    \n\nUpon a successful update, the response will include the updated timesheet details."
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{laravel_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"task_name\": \"Code cleanup\",\r\n    \"hours\": 6,\r\n    \"project_id\": 1,\r\n    \"date\": \"2025-03-07\",\r\n    \"user_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{laravel-host}}/api/timesheets/1",
+									"host": [
+										"{{laravel-host}}"
+									],
+									"path": [
+										"api",
+										"timesheets",
+										"1"
+									],
+									"query": [
+										{
+											"key": "Accept",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 19:42:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Host",
+									"value": "130.61.83.110"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"task_name\": \"Code cleanup\",\n    \"date\": \"2025-03-07\",\n    \"hours\": 6,\n    \"user_id\": 1,\n    \"project_id\": 1,\n    \"created_at\": \"2025-03-07T19:14:22.000000Z\",\n    \"updated_at\": \"2025-03-07T19:42:45.000000Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{laravel-host}}/api/attributes/1",
+						"description": "### Delete Attribute\n\nThis endpoint is used to delete a specific attribute by its ID.\n\n#### Request\n\n- Method: DELETE\n    \n- URL: `{{laravel-host}}/api/attributes/1`\n    \n\n#### Response\n\nThe response for this request is a JSON schema with the following properties:\n\n- `message`: A string indicating the result of the deletion operation."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "laravel_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+			"type": "default"
+		},
+		{
+			"key": "laravel-host",
+			"value": "130.61.83.110",
+			"type": "default"
+		}
+	]
+}
