@@ -99,7 +99,16 @@ Below tables are created:
     ./vendor/bin/sail artisan key:generate
     ```
 
-9. **Run migrations**:
+9. **Create Database**:
+    
+    Mysql docker container is configured with port 3311 on localhost.
+    ```bash
+    username: sail
+    password: password
+    ```
+    connect to mysql and create database `laravel`
+   
+11. **Run migrations**:
     ```bash
     ./vendor/bin/sail artisan migrate
     ```
