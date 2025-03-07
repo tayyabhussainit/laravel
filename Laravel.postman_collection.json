@@ -1,0 +1,739 @@
+{
+	"info": {
+		"_postman_id": "bb0e4e07-cf31-474e-9fdd-6596c864cb5b",
+		"name": "Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33549726"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Tayyab\",\r\n    \"last_name\": \"Hussain\",\r\n    \"email\": \"tayyab.hussain.eng@gmail.com\",\r\n    \"password\": \"Hussain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tayyab.hussain.eng@gmail.com\",\r\n    \"password\": \"Hussain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzU0ZWVjMzAyN2MxYzM5YWQ3NTE3MmQ0ZjEwY2JlYzI3ZWY2YzkxNzk4YjRhZTU0NzgyYzA2MTM2MWIzMWFiMDgyNTdlYmRiZTgwNjkyNTgiLCJpYXQiOjE3NDEzMjY1NTkuNTk3NjQxLCJuYmYiOjE3NDEzMjY1NTkuNTk3NjQ0LCJleHAiOjE3NzI4NjI1NTkuNTI5NDY5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.f64rjJRMKu8-niDCE1TThhPsyvqHPdT1Tny-FD17CP52SP8ljJ1L6yH3CF6bq9bv3HEuaAJG75n4SgfeNa1ZDbACtj-vfWnR3w5JjGuA_UdrbRBk9w6gpAML0okkr7crA4H2pw-xUMHFHCl36rTkaPL_VNVPd1Sl-_krK89r7V5q1s5eOM470sO0TxlTLtmA2PNmQPmb5vBLXG0mezrCJQLK6062nLmsWbzy14R0NgLgQIVi7y4wLkLxW6W0Of9CXaloK0Blx2Rex6rh0VICvigBsVRfINFwKam0J41oh2GfjralCx7E7Zwh-siFOFlOF92z0ZetM77KGYn72qh-KZCiimvlBpzQr4yyZvyZorE4Iov5P9QB_zCSoljyil_oDSHH3s_ehXQ0Q05IjMamKHMAKZlbt5URQ-wGIztb3cUdEB-F1AayvDIHMUexU5PYMJrHiQI0Jh2vN9sFmU1SMwKL9FD-ZHg46gAVQE0mSap5O_vPOq7GUHvgVFp2nSvraPvNG07PUodA_qpd37NpMU72R7iEktSm2ZjMrQXendzMk95CIKBFIQA0TrqnK8q5PL-57mk0wq0pkwj2YTyPHmfvhld_4e72j97LajjM_YOmQTQxylyNIoH-kaDK_y5sLXPToUiOzNKIcahU37080XF3R3-LSZCHIllLYQpBASo",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost/api/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/projects?filters[status]=inactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filters[status]",
+									"value": "inactive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/projects/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Project 122\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set attributes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"start_date\",\r\n            \"value\": \"07-03-2025\"\r\n        },\r\n        {\r\n            \"name\": \"end_date\",\r\n            \"value\": \"07-05-2025\"\r\n        },\r\n                {\r\n            \"name\": \"department\",\r\n            \"value\": \"IT\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/projects/1/attributes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"projects",
+								"1",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Project 122\",\r\n    \"status\": \"inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/projects/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"projects",
+								"3"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost/api/projects/111"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "attributes",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/attributes?filters[type]=date",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filters[type]",
+									"value": "date"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"department\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/attributes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/attributes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"attributes",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"department\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/attributes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"attributes",
+								"3"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost/api/timesheets/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timesheets",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/timesheets?filters[user_id]=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"timesheets"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filters[user_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task_name\": \"feature 1\",\r\n    \"hours\": 8,\r\n    \"project_id\": 1,\r\n    \"date\": \"2025-03-07\",\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/timesheets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"timesheets"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/timesheets/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"timesheets",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task_name\": \"feature 2\",\r\n    \"hours\": 6,\r\n    \"project_id\": 1,\r\n    \"date\": \"2025-03-07\",\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/timesheets/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"timesheets",
+								"1"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{laravel_token}}",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost/api/attributes/1"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "laravel_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGNmODEzNDdkMmEzZjQzZGMyMTk5YjMwYWE0ZmRhMWNjMWUwNTEzOGU1Zjc5ZmM2OTNhYTkwZTNlNjc5Y2FkMzk2MTM1MWQ0Y2E1NGEwMGUiLCJpYXQiOjE3NDEzMjk5MjcuMzExNzM1LCJuYmYiOjE3NDEzMjk5MjcuMzExNzM4LCJleHAiOjE3NzI4NjU5MjcuMjMwNzE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H8qVbuX50tSSqCkHueFPU2Ld054V8l0ZhM7CITDori_t9kYyvCk_StV0ASLVjKJ58_zG84Va6Ia1K0Jjnw9LTixNdc9oBIzadtwO1sFEzVS_sryzIlW7bwSLSiGO1T4XAAyVF9jEpaIFxMhRmHY1H5uPsuvpCboj8d8SlcdKP8J5XcnkzJz49IMqWdvAC45riCpyRfbJrTNHGYcA6eSGzW49RPMTa2QENFcb8wjLb3GoEjzKDdSU1fLxawqx_7KZpTV8HRd5yIOgATNoyX5WDOkK75zqKgROS3z_jD_Wdb27s6a1eS_Zl80fL63isZ7H7uosw4BTCIJyYXoYddxvdJmzJlUc2nkRDzlrrn_Xoej_u8EXZTTW2wlomHMM3o_5bwIvjhB9qUx_n-WVsFvY8kcefjmppNxLDE_LdH8D9bkNtanzzqobYVxcIaP39L696gaBhjnH2RCCGrVh49Tx_C0B4-qE0lIc50nYByUs-S6U7UedJ7hMR2z-LyWgk21xStIi2ufniyrgLPzUgKlY6Ntc2dskU6DSTSxSA1rQQGwIwHqf25FbrtWGxJb9lrxb-4laKsl_5UDtKUyhXnUTNuVbc324PPF8xX2sfOAZuQ-ythqeGKXpgM5UusTLBbrLPC2-AM_lVqULGJN7P2c8EXoPA43v2cyakhT2Av6ssys",
+			"type": "default"
+		}
+	]
+}
