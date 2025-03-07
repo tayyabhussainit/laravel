@@ -133,5 +133,5 @@ To ensure code quality, PHP Code Sniffer was used to check the code for any viol
       ```
 
 ## Postman collection
-
+[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
 
