@@ -108,10 +108,29 @@ Below tables are created:
     ```
     connect to mysql and create database `laravel`
    
-11. **Run migrations**:
+10. **Run Migrations**:
     ```bash
     ./vendor/bin/sail artisan migrate
     ```
+
+11. **Passport Keys**:
+    ```bash
+    ./vendor/bin/sail artisan passport:keys --force
+    ```
+
+12. **Create access Client**
+    ```bash
+    ./vendor/bin/sail artisan passport:client --personal
+    ```
+
+
+## Postman Collection
+[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
+
+## API Documentation
+```bash
+https://documenter.getpostman.com/view/33549726/2sAYdoE7HP
+```
 
 ## Code Quality: PHP Code Sniffer
 
@@ -140,7 +159,3 @@ To ensure code quality, PHP Code Sniffer was used to check the code for any viol
       ```bash
       ./vendor/bin/phpcs -v app/Models/
       ```
-
-## Postman collection
-[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
-
