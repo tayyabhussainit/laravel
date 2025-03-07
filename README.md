@@ -117,9 +117,9 @@ Below tables are created:
     ```
 
 ## API Documentation
-```bash
+
 [Documentation](https://documenter.getpostman.com/view/33549726/2sAYdoE7HP)
-```
+
 
 ## Postman Collection
 [collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
