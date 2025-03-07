@@ -77,17 +77,17 @@ Below tables are created:
     cp .env.example .env
     ```
 
-4. **Start the project using WSL (required for setup on windows)**:
+4. **WSL (Required for setup on windows)**:
     ```bash
     wsl -d ubuntu
     ```
 
-5. **Install dependencies**:
+5. **Install Dependencies**:
     ```bash
     docker run --rm -v $(pwd):/app -w /app laravelsail/php82-composer:latest composer install
     ```    
 
-6. **Start the Docker containers**:
+6. **Start the Docker Containers**:
     ```bash
     ./vendor/bin/sail up -d
     ```
@@ -111,14 +111,14 @@ Below tables are created:
     ./vendor/bin/sail artisan passport:keys --force
     ```
 
-10. **Create access Client**
+10. **Create Access Client**
     ```bash
     ./vendor/bin/sail artisan passport:client --personal
     ```
 
 ## API Documentation
 ```bash
-https://documenter.getpostman.com/view/33549726/2sAYdoE7HP
+[Documentation](https://documenter.getpostman.com/view/33549726/2sAYdoE7HP)
 ```
 
 ## Postman Collection
