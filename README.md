@@ -14,7 +14,7 @@ This repo has the following branches:
 ## Pull Request
 A Pull Request has been created from `apis` to `sail-setup` for easy code review.
 
-[PR]()
+[PR](https://github.com/tayyabhussainit/laravel/pull/1)
 
 ## Solution Details
 
@@ -77,29 +77,22 @@ Below tables are created:
     cp .env.example .env
     ```
 
-4. **Install dependencies**:
-    ```bash
-    docker run --rm -v $(pwd):/app -w /app laravelsail/php82-composer:latest composer install
-    ```
-
-5. **Start the project using WSL (required for setup on windows)**:
+4. **Start the project using WSL (required for setup on windows)**:
     ```bash
     wsl -d ubuntu
     ```
 
-6. **Go to the project directory (inside WSL, required for setup on windows)**.
+5. **Install dependencies**:
+    ```bash
+    docker run --rm -v $(pwd):/app -w /app laravelsail/php82-composer:latest composer install
+    ```    
 
-7. **Start the Docker containers**:
+6. **Start the Docker containers**:
     ```bash
     ./vendor/bin/sail up -d
     ```
 
-8. **Generate the application key**:
-    ```bash
-    ./vendor/bin/sail artisan key:generate
-    ```
-
-9. **Create Database**:
+7. **Create Database**:
     
     Mysql docker container is configured with port 3311 on localhost.
     ```bash
@@ -108,29 +101,28 @@ Below tables are created:
     ```
     connect to mysql and create database `laravel`
    
-10. **Run Migrations**:
+8. **Run Migrations**:
     ```bash
     ./vendor/bin/sail artisan migrate
     ```
 
-11. **Passport Keys**:
+9. **Passport Keys**:
     ```bash
     ./vendor/bin/sail artisan passport:keys --force
     ```
 
-12. **Create access Client**
+10. **Create access Client**
     ```bash
     ./vendor/bin/sail artisan passport:client --personal
     ```
-
-
-## Postman Collection
-[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
 
 ## API Documentation
 ```bash
 https://documenter.getpostman.com/view/33549726/2sAYdoE7HP
 ```
+
+## Postman Collection
+[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
 
 ## Code Quality: PHP Code Sniffer
 
