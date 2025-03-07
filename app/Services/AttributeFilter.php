@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ProjectFilter class file
+ * AttributeFilter class file
  *
  * PHP Version 8.3
  *
@@ -14,12 +14,13 @@
 
 namespace App\Services;
 
+use App\Models\Attribute;
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 /**
- * ProjectFilter class
+ * AttributeFilter class
  *
  * PHP Version 8.3
  *
@@ -29,7 +30,7 @@ use Illuminate\Http\Request;
  * @license  https://github.com/tayyabhussainit Private Repo
  * @link     https://github.com/tayyabhussainit/laravel
  */
-class ProjectFilter
+class AttributeFilter
 {
     /**
      * Filter project
@@ -40,21 +41,15 @@ class ProjectFilter
      */
     public function filter(Request $request): Collection
     {
-        $query = Project::query();
+        $query = Attribute::query();
         if ($request->has('filters')) {
             foreach ($request->filters as $key => $value) {
-                if (in_array($key, ['name', 'status'])) {
+                if (in_array($key, ['name', 'type'])) {
                     $query->where($key, 'LIKE', "%$value%");
-                } else {
-                    $query->whereHas('attributes', function ($q) use ($key, $value) {
-                        $q->whereHas('attribute', function ($attr) use ($key) {
-                            $attr->where('name', $key);
-                        })->where('value', 'LIKE', "%$value%");
-                    });
                 }
             }
         }
 
-        return $query->with(['attributes.attribute'])->get();
+        return $query->get();
     }
 }

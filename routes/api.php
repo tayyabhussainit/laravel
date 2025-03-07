@@ -16,6 +16,8 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('timesheets', TimesheetController::class);
     Route::apiResource('attributes', AttributeController::class);
     Route::post('/projects/{project}/attributes', [ProjectController::class, 'setAttributes']);
-    Route::get('/projects', [ProjectController::class, 'filterProjects']);
 
+    Route::get('/projects', [ProjectController::class, 'filterProjects']);
+    Route::get('/attributes', [AttributeController::class, 'filterAttributes']);
+    Route::get('/timesheets', [TimesheetController::class, 'filterTimesheets']);
 });

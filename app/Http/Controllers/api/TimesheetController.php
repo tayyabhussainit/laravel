@@ -16,6 +16,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Timesheet;
+use App\Services\TimesheetFilter;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,10 @@ use Illuminate\Http\Request;
  */
 class TimesheetController extends Controller
 {
+    public function __construct(private TimesheetFilter $timesheetFilterService)
+    {
+
+    }
     /**
      * Return all timesheets
      * 
@@ -110,5 +115,20 @@ class TimesheetController extends Controller
     {
         $timesheet->delete();
         return response()->json(['message' => 'Timesheet deleted successfully']);
+    }
+
+    /**
+     * Get filtered timesheets
+     *
+     * @param Request $request Request 
+     * 
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function filterTimesheets(Request $request): JsonResponse
+    {
+
+        $response = $this->timesheetFilterService->filter($request);
+
+        return response()->json($response);
     }
 }

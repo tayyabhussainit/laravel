@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ProjectFilter class file
+ * TimesheetFilter class file
  *
  * PHP Version 8.3
  *
@@ -15,11 +15,12 @@
 namespace App\Services;
 
 use App\Models\Project;
+use App\Models\Timesheet;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 /**
- * ProjectFilter class
+ * TimesheetFilter class
  *
  * PHP Version 8.3
  *
@@ -29,10 +30,10 @@ use Illuminate\Http\Request;
  * @license  https://github.com/tayyabhussainit Private Repo
  * @link     https://github.com/tayyabhussainit/laravel
  */
-class ProjectFilter
+class TimesheetFilter
 {
     /**
-     * Filter project
+     * Filter timesheets
      *
      * @param Request $request Request 
      * 
@@ -40,21 +41,15 @@ class ProjectFilter
      */
     public function filter(Request $request): Collection
     {
-        $query = Project::query();
+        $query = Timesheet::query();
         if ($request->has('filters')) {
             foreach ($request->filters as $key => $value) {
-                if (in_array($key, ['name', 'status'])) {
+                if (in_array($key, ['task_name', 'date', 'user_id', 'project_id'])) {
                     $query->where($key, 'LIKE', "%$value%");
-                } else {
-                    $query->whereHas('attributes', function ($q) use ($key, $value) {
-                        $q->whereHas('attribute', function ($attr) use ($key) {
-                            $attr->where('name', $key);
-                        })->where('value', 'LIKE', "%$value%");
-                    });
                 }
             }
         }
 
-        return $query->with(['attributes.attribute'])->get();
+        return $query->get();
     }
 }
