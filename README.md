@@ -1,66 +1,161 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+This repository contains a Laravel 12 application with a laravel passport authentication and REST apis for CRUD.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Branches
 
-## About Laravel
+This repo has the following branches:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **main**: Contains the base Laravel 12 code.
+- **sail-setup**: Derived from `main`, this branch has laravel sail setup.
+- **apis**: Derived from `sail-setup`, Contains the code related to the laravel passport and REST apis.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Branch Hierarchy:
+- main -> sail-setup -> apis
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Pull Request
+A Pull Request has been created from `apis` to `sail-setup` for easy code review.
 
-## Learning Laravel
+[PR](https://github.com/tayyabhussainit/laravel/pull/1)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Solution Details
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The primary feature of this repository is Laravel REST apis with authentication. Below are the key files:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Controllers
+- `app/Http/Controller/api/AuthController.php`
+- `app/Http/Controller/api/ProjectController.php`
+- `app/Http/Controller/api/AttributeController.php`
+- `app/Http/Controller/api/TimesheetController.php`
 
-## Laravel Sponsors
+### Services
+- `app/Services/ProjectFilter.php`
+- `app/Services/AttributeFilter.php`
+- `app/Services/TimesheetFilter.php`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Models
+- `app/Models/User.php`
+- `app/Models/Project.php`
+- `app/Models/Timesheet.php`
+- `app/Models/Attribute.php`
+- `app/Models/AttributeValue.php`
 
-### Premium Partners
+### Migrations
+- Database migration files are located in `database/migrations`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Schema
+Below tables are created:
 
-## Contributing
+1. `users` [id, first_name, last_name, email, password]
+2. `projects` [id, name, status]
+3. `project_user` [id, user_id, project_id]
+4. `timehsheet` [id, task_name, hours, date, user_id, project_id]
+5. `attribute` [id, name, type]
+6. `attribute_value` [id, attribute_id, entity_id, value]
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Setup Guidelines
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Prerequisites
 
-## Security Vulnerabilities
+- Docker
+- WSL2 (for Windows users)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Setup Steps
 
-## License
+1. **Clone the repository**:
+    ```bash
+    git clone git@github.com:tayyabhussainit/laravel.git
+    cd laravel
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. **Checkout the `apis` branch**:
+    ```bash
+    git checkout apis
+    ```
+
+3. **Copy the environment file**:
+    ```bash
+    cp .env.example .env
+    ```
+
+4. **Install dependencies**:
+    ```bash
+    docker run --rm -v $(pwd):/app -w /app laravelsail/php82-composer:latest composer install
+    ```
+
+5. **Start the project using WSL (required for setup on windows)**:
+    ```bash
+    wsl -d ubuntu
+    ```
+
+6. **Go to the project directory (inside WSL, required for setup on windows)**.
+
+7. **Start the Docker containers**:
+    ```bash
+    ./vendor/bin/sail up -d
+    ```
+
+8. **Generate the application key**:
+    ```bash
+    ./vendor/bin/sail artisan key:generate
+    ```
+
+9. **Create Database**:
+    
+    Mysql docker container is configured with port 3311 on localhost.
+    ```bash
+    username: sail
+    password: password
+    ```
+    connect to mysql and create database `laravel`
+   
+10. **Run Migrations**:
+    ```bash
+    ./vendor/bin/sail artisan migrate
+    ```
+
+11. **Passport Keys**:
+    ```bash
+    ./vendor/bin/sail artisan passport:keys --force
+    ```
+
+12. **Create access Client**
+    ```bash
+    ./vendor/bin/sail artisan passport:client --personal
+    ```
+
+
+## Postman Collection
+[collection](https://github.com/tayyabhussainit/laravel/blob/apis/Laravel.postman_collection.json)
+
+## API Documentation
+```bash
+https://documenter.getpostman.com/view/33549726/2sAYdoE7HP
+```
+
+## Code Quality: PHP Code Sniffer
+
+To ensure code quality, PHP Code Sniffer was used to check the code for any violations of coding standards.
+
+### Running PHP Code Sniffer
+
+1. **Access the Docker container**:
+    ```bash
+    ./vendor/bin/sail bash
+    ```
+
+2. **Run PHP Code Sniffer on specific files or directories**:
+
+    - To check the `Controllers`:
+      ```bash
+      ./vendor/bin/phpcs -v app/Http/Controller/api
+      ```
+
+    - To check the `Services` directory:
+      ```bash
+      ./vendor/bin/phpcs -v app/Services/
+      ```
+
+    - To check the `Models` directory:
+      ```bash
+      ./vendor/bin/phpcs -v app/Models/
+      ```
