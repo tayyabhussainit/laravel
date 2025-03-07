@@ -1,17 +1,46 @@
 <?php
 
+/**
+ * User class file
+ *
+ * PHP Version 8.3
+ *
+ * @category Class
+ * @package  Api
+ * @author   Tayyab <tayyab.hussain.it@gmail.com>
+ * @license  https://github.com/tayyabhussainit Private Repo
+ * @link     https://github.com/tayyabhussainit/laravel
+ */
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 
+/**
+ * User class
+ *
+ * PHP Version 8.3
+ *
+ * @category Class
+ * @package  Api
+ * @author   Tayyab <tayyab.hussain.it@gmail.com>
+ * @license  https://github.com/tayyabhussainit Private Repo
+ * @link     https://github.com/tayyabhussainit/laravel
+ */
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
+    /**
+     * Traits included
+     * 
+     * @use HasFactory<\Database\Factories\UserFactory> 
+     */
     use HasFactory, Notifiable, SoftDeletes, HasApiTokens;
 
     /**
@@ -49,12 +78,22 @@ class User extends Authenticatable
         ];
     }
 
-    public function projects()
+    /**
+     * Relation to Project
+     * 
+     * @return BelongsToMany
+     */
+    public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class);
     }
 
-    public function timesheets()
+    /**
+     * Relation to Timesheet
+     * 
+     * @return HasMany
+     */
+    public function timesheets(): HasMany
     {
         return $this->hasMany(Timesheet::class);
     }
